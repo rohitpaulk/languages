@@ -10,6 +10,7 @@ go = Language.new(slug: "go", name: "Go", repo_suffix: "go")
 c = Language.new(slug: "c", name: "C", repo_suffix: "c")
 ruby = Language.new(slug: "ruby", name: "Ruby", repo_suffix: "ruby")
 rust = Language.new(slug: "rust", name: "Rust", repo_suffix: "rust")
+elixir = Language.new(slug: "ex", name: "Elixir", repo_suffix: "elixir")
 
 DEFINITIONS = [
   # ------------------- REDIS ------------------------------
@@ -67,6 +68,20 @@ DEFINITIONS = [
     template_attrs: {
       "required_executable": "ruby (2.7)",
       "user_editable_file": "app/server.rb"
+    }
+  ),
+  Repo.new(
+    course: redis,
+    language: elixir,
+    file_mappings: [
+      FM.new("README.md", "redis/README.md"),
+      FM.new("codecrafters.yml", "codecrafters.yml"),
+      FM.new("app/lib/server.ex", "redis/elixir/app/lib/server.ex"),
+      FM.new("spawn_redis_server.sh", "redis/elixir/spawn_redis_server.sh", is_executable=true),
+    ],
+    template_attrs: {
+      "required_executable": "elixir (1.10)",
+      "user_editable_file": "app/lib/server.ex"
     }
   ),
 
