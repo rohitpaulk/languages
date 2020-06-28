@@ -35,3 +35,7 @@ language_pack: ruby-2.7
 # Available versions: rust-1.43
 language_pack: rust-1.43
 {{/ language_is_rust }}
+{{# language_is_elixir}}
+# Available versions: elixir-1.10 
+language_pack: elixir-1.10
+{{/ language_is_elixir }}
